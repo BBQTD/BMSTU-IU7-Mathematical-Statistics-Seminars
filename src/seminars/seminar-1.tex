@@ -34,27 +34,28 @@
 	Пусть $X$ --- случайная величина, $MX = 1$, $\sigma = \sqrt{DX} = 0.2$. Оценить вероятности событий:
 	\begin{enumerate}
 		\item $\{ 0.5 \leq X < 1.5 \}$;
-		\item $\{ 0.75 \leq X < 1.55 \}$;
+		\item $\{ 0.75 \leq X < 1.35 \}$;
 		\item $\{ X < 2 \}$.	
 	\end{enumerate}
 \end{exm}
 
-\begin{slv}[$\{ 0.5 \leq X < 1.5 \}$]
+\begin{slv}[$\{ 0.5 \leq X < 1.5 \}$]\hfill\\
 	Используем \textit{второе неравенство Чебышева}
 	\[
 		\Prob\bigl\{ | X - MX | \geq \varepsilon \bigl\} \leq \frac{DX}{\varepsilon^2};
 	\]
 	Приведём событие к форме, которая будет работать \textit{со вторым неравенством Чебышева}
-	\[
-		\{ 0.5 \leq X < 1.5 \} = \{ -0.5 \leq X - 1 < 0.5 \} \supseteq \{ -0.5 < X - 1 < 0.5 \} = \bigl\{ |X - 1| < 0.5 \bigr\};
-	\]
+	\begin{multline*}
+		\qquad\qquad\{ 0.5 \leq X < 1.5 \} = \{ -0.5 \leq X - 1 < 0.5 \} \supseteq \\
+		\supseteq \{ -0.5 < X - 1 < 0.5 \} = \bigl\{ |X - 1| < 0.5 \bigr\}\qquad\qquad
+	\end{multline*}
 	Строим вероятность противоположного события $\bigl\{ |X - 1| < 0.5 \bigr\}$
 	\[
-		\Prob \bigl\{ |X - 1| < 0.5 \bigr\} = 1 - \Prob \bigl\{ |X - 1| \geq 0.5 \bigr\};
+		\Prob \bigl\{ |X - 1| < 0.5 \bigr\} = 1 - \Prob \bigl\{ |X - 1| \geq 0.5 \bigr\}
 	\]
 	Рассмотрим второе неравенство Чебышева. Умножим на $-1$
 	\[
-		- \Prob\bigl\{ | X - MX | \geq \varepsilon \bigr\} \geq - \frac{DX}{\varepsilon^2};
+		- \Prob\bigl\{ | X - MX | \geq \varepsilon \bigr\} \geq - \frac{DX}{\varepsilon^2}
 	\]
 	Прибавим $1$, получаем
 	\begin{equation}
@@ -62,8 +63,40 @@
 	\end{equation}
 	Используя данную форму, решаем поставленную задачу
 	\[
-		1 - \Prob \bigl\{ |X - 1| \geq 0.5 \bigr\} \geq 1 - \Biggl(\frac{0.2}{0.5}\Biggr)^2;
+		1 - \Prob \bigl\{ |X - 1| \geq 0.5 \bigr\} \geq 1 - \Biggl(\frac{0.2}{0.5}\Biggr)^2 = \frac{21}{25}
 	\]
 	\textbf{Ответ:} $\Prob \{ 0.5 \leq X < 1.5 \} \geq 21/25$.
 \end{slv}
 
+\begin{slv}[$\{ 0.75 \leq X < 1.55 \}$]\hfill\\
+	Приводим событие к необходимой форме 
+	\begin{multline*}
+		\qquad\qquad\{ 0.75 \leq X < 1.35 \} = \{ -0.25 \leq X - 1 < 0.35 \} \supseteq \\
+		\supseteq \{ -0.25 < X - 1 < 0.25 \} = \bigl\{ |X - 1| < 0.25 \bigr\}\qquad\qquad
+	\end{multline*}
+	Строим вероятность противоположного события $\bigl\{ |X - 1| < 0.25 \bigr\}$
+	\[
+		\Prob \bigl\{ |X - 1| < 0.25 \bigr\} = 1 - \Prob \bigl\{ |X - 1| \geq 0.25 \bigr\}
+	\]
+	Применяем \textit{второе неравенство Чебышева}, получаем
+	\[
+		1 - \Prob \bigl\{ |X - 1| \geq 0.25 \bigr\} \geq 1 - \Biggl(\frac{0.2}{0.25}\Biggr)^2 = \frac{9}{25} 
+	\]
+	\textbf{Ответ:} $\Prob \{ 0.75 \leq X < 1.55 \} \geq 9/25$.
+\end{slv}
+
+\begin{slv}[$\{ X < 2 \}$]\hfill\\
+	Приводим событие к необходимой форме 
+	\[
+		\{ X < 2 \} = \{ X - 1 < 1 \} \supseteq \{ -1 < X - 1 < 1 \} = \bigl\{ |X - 1| < 1 \bigr\}
+	\]
+	Строим вероятность противоположного события $\bigl\{ |X - 1| < 1 \bigr\}$
+	\[
+		\Prob \bigl\{ |X - 1| < 1 \bigr\} = 1 - \Prob \bigl\{ |X - 1| \geq 1 \bigr\}
+	\]
+	Применяем \textit{второе неравенство Чебышева}, получаем
+	\[
+		1 - \Prob \bigl\{ |X - 1| \geq 1 \bigr\} \geq 1 - \Biggl(\frac{0.2}{1}\Biggr)^2 = 0.96
+	\]
+	\textbf{Ответ:} $\Prob \{ X < 2 \} \geq 0.96$.
+\end{slv}
