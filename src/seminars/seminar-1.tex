@@ -169,6 +169,30 @@
 		MX_n &= \sum_{i = 1}^{2} x_i\, p_i = \frac{-\sqrt{\ln n}}{2} + \frac{\sqrt{\ln n}}{2} = 0; \\
 		DX_n &= MX^2 - \cancelto{0}{(MX)^2}\;\;\; = \sum_{i = 1}^{2} x_i^2\, p_i = \frac{\ln n}{2} + \frac{\ln n}{2} = \ln n.
 	\end{align*}
-	$DX_n$ --- не ограничена в совокупности
+	$DX_n$ --- не ограничена в совокупности\\
 	\textbf{Ответ:} Последовательность $X_2, X_3, \dots, X_n, \dots $ не удовлетворяет ЗБЧ в форме Чебышева
+\end{slv}
+
+\begin{rem}
+	Можно доказать аналог \textit{теоремы Чебышева} с ослабленным условием
+\end{rem}
+
+\begin{thm}  Пусть
+	\begin{itemize}
+		\item $X_1, \dots, X_n, \dots$ --- последовательность независимых случайных величин;
+		\item $\exists MX_i = m_i$, $\exists DX_i = \sigma_i^2$;
+		\item $\lim\limits_{n \to \infty} 1/n \, \sum_{i = 1}^{n} DX_i = 0$.
+	\end{itemize}
+	Тогда последовательность $X_1, \dots, X_n, \dots$ удовлетворяет ЗБЧ.
+\end{thm}
+
+\begin{slv} Рассмотрим применение теоремы на предыщем примере (2.2 сыль сюда).
+	\[
+		\lim\limits_{n \to \infty} \frac{1}{n^2} \sum_{i = 1}^{n} DX_i = \lim\limits_{n \to \infty} \frac{1}{n^2} \sum_{i = 1}^{n} \ln i = \lim\limits_{n \to \infty} \frac{1}{n^2} \ln n!
+	\]
+	Применяем \textit{формулу Стирлинга}: $n! \sim (n/e)^n \sqrt{2 \pi n}$, при $n \to \infty$
+	\[
+		\lim\limits_{n \to \infty} \frac{1}{n^2} \ln n! = \lim\limits_{n \to \infty} \frac{n \ln n - n + 1/2 \ln 2 \pi + 1/2 \ln n}{n^2} = \lim\limits_{n \to \infty} \frac{\ln n}{n} = 0
+	\]
+	\textbf{Ответ:} Последовательность $X_1, \dots, X_n, \dots$ удовлетворяет ЗБЧ, но не в форме Чебышева.
 \end{slv}
